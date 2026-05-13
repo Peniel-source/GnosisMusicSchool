@@ -28,7 +28,7 @@ export default function ScrollScaleWrapper({
     <motion.div
       ref={ref}
       style={{ scale: springScale, opacity: springOpacity }}
-      className={className}
+      className={`relative ${className}`}
     >
       {children}
     </motion.div>

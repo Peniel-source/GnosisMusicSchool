@@ -24,7 +24,7 @@ export default function ParallaxWrapper({
   const springY = useSpring(y, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
   return (
-    <motion.div ref={ref} style={{ y: springY }} className={className}>
+    <motion.div ref={ref} style={{ y: springY }} className={`relative ${className}`}>
       {children}
     </motion.div>
   );

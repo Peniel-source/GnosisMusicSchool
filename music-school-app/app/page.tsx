@@ -160,10 +160,10 @@ export default function HomePage() {
             alt="Music Studio"
             fill
             priority
-            className="object-cover opacity-40"
+            className="object-cover opacity-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />
-          <div className="absolute inset-0 bg-background/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/20 to-background/80" />
+          <div className="absolute inset-0 bg-background/20" />
         </div>
 
         <div className="absolute inset-0 pointer-events-none z-10">

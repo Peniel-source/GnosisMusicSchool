@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { animate, stagger } from "animejs";
 
 interface AnimeWaveformProps {
@@ -10,6 +10,11 @@ interface AnimeWaveformProps {
 
 export default function AnimeWaveform({ bars = 40, className = "" }: AnimeWaveformProps) {
   const containerRef = useRef<SVGSVGElement>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const svg = containerRef.current;
@@ -53,7 +58,7 @@ export default function AnimeWaveform({ bars = 40, className = "" }: AnimeWavefo
     >
       {Array.from({ length: bars }).map((_, i) => {
         const x = i * (barWidth + gap);
-        const initialH = 8 + Math.random() * (height - 8);
+        const initialH = mounted ? 8 + Math.random() * (height - 8) : 20;
         return (
           <rect
             key={i}
