@@ -235,11 +235,11 @@ export default function PricingPage() {
           <p className="text-muted-foreground max-w-xl mx-auto">Everything you need to know before booking.</p>
         </motion.div>
         <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-3">
+          <Accordion className="space-y-3">
             {faqs.map((faq, i) => (
               <AccordionItem
                 key={i}
-                value={`faq-${i}`}
+                value={String(i)}
                 className="bg-background border border-border rounded-xl px-6"
               >
                 <AccordionTrigger className="font-heading font-semibold text-left text-foreground hover:text-primary hover:no-underline py-5">
