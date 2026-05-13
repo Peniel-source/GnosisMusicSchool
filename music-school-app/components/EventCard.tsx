@@ -50,7 +50,7 @@ export default function EventCard({
             className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
         </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent dark:from-surface/80" />
         <Badge className="absolute top-3 right-3 bg-primary text-primary-foreground border-0">
           {type}
         </Badge>

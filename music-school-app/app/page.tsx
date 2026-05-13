@@ -170,11 +170,11 @@ export default function HomePage() {
             priority
             className="object-cover opacity-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/20 to-background/80" />
-          <div className="absolute inset-0 bg-background/20" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background/40 dark:from-background/80 dark:via-background/20 dark:to-background/80" />
+          <div className="absolute inset-0 bg-background/5 dark:bg-background/20" />
         </div>
 
-        <div className="absolute inset-0 pointer-events-none z-10">
+        <div className="absolute inset-0 pointer-events-none z-10 opacity-0 dark:opacity-100">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/10 blur-[120px]" />
           {/* Animejs equalizer waveform — bottom of hero */}
           <div className="absolute bottom-16 left-1/2 -translate-x-1/2 text-primary/15 w-full flex justify-center overflow-hidden">
