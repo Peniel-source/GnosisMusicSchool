@@ -47,23 +47,64 @@
   --color-surface-2: var(--surface-2);
 }
 
+/* ── Light mode (default) ── */
 :root {
-  /* ── Gnosis Brand Palette ── */
-  /* Near-black background from logo */
+  --background: oklch(0.97 0.005 195);
+  --foreground: oklch(0.10 0.012 258);
+
+  --card: oklch(1.00 0.000 0);
+  --card-foreground: oklch(0.10 0.012 258);
+  --popover: oklch(1.00 0.000 0);
+  --popover-foreground: oklch(0.10 0.012 258);
+
+  --primary: oklch(0.60 0.155 182);
+  --primary-foreground: oklch(0.99 0.000 0);
+
+  --secondary: oklch(0.92 0.008 195);
+  --secondary-foreground: oklch(0.10 0.012 258);
+
+  --muted: oklch(0.92 0.008 195);
+  --muted-foreground: oklch(0.46 0.012 200);
+
+  --accent: oklch(0.60 0.155 182);
+  --accent-foreground: oklch(0.99 0.000 0);
+
+  --destructive: oklch(0.577 0.245 27.325);
+
+  --border: oklch(0.60 0.155 182 / 22%);
+  --input: oklch(0.92 0.008 195);
+  --ring: oklch(0.60 0.155 182);
+  --radius: 0.5rem;
+
+  --sidebar: oklch(0.94 0.007 195);
+  --sidebar-foreground: oklch(0.10 0.012 258);
+  --sidebar-primary: oklch(0.60 0.155 182);
+  --sidebar-primary-foreground: oklch(0.99 0.000 0);
+  --sidebar-accent: oklch(0.92 0.008 195);
+  --sidebar-accent-foreground: oklch(0.10 0.012 258);
+  --sidebar-border: oklch(0.60 0.155 182 / 22%);
+  --sidebar-ring: oklch(0.60 0.155 182);
+
+  --teal: oklch(0.60 0.155 182);
+  --teal-light: oklch(0.72 0.155 182);
+  --teal-dark: oklch(0.48 0.140 182);
+  --surface: oklch(0.94 0.007 195);
+  --surface-2: oklch(0.89 0.010 195);
+}
+
+/* ── Dark mode ── */
+html.dark {
   --background: oklch(0.07 0.012 258);
   --foreground: oklch(0.96 0.004 88);
 
-  /* Card surfaces */
   --card: oklch(0.10 0.010 258);
   --card-foreground: oklch(0.96 0.004 88);
   --popover: oklch(0.10 0.010 258);
   --popover-foreground: oklch(0.96 0.004 88);
 
-  /* Teal primary from "GNOSIS" logo text */
   --primary: oklch(0.72 0.155 182);
   --primary-foreground: oklch(0.07 0.012 258);
 
-  /* Slightly-lighter surface for secondary */
   --secondary: oklch(0.14 0.010 258);
   --secondary-foreground: oklch(0.96 0.004 88);
 
@@ -75,13 +116,11 @@
 
   --destructive: oklch(0.577 0.245 27.325);
 
-  /* Subtle teal-tinted border */
   --border: oklch(0.72 0.155 182 / 18%);
   --input: oklch(0.14 0.010 258);
   --ring: oklch(0.72 0.155 182);
   --radius: 0.5rem;
 
-  /* Sidebar */
   --sidebar: oklch(0.10 0.010 258);
   --sidebar-foreground: oklch(0.96 0.004 88);
   --sidebar-primary: oklch(0.72 0.155 182);
@@ -91,7 +130,6 @@
   --sidebar-border: oklch(0.72 0.155 182 / 18%);
   --sidebar-ring: oklch(0.72 0.155 182);
 
-  /* Brand tokens */
   --teal: oklch(0.72 0.155 182);
   --teal-light: oklch(0.80 0.135 182);
   --teal-dark: oklch(0.58 0.140 182);

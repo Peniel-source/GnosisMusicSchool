@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, Music } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -63,7 +64,7 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* CTA + hamburger */}
+          {/* CTA + theme toggle + hamburger */}
           <div className="flex items-center gap-3">
             <Link
               href="/registration"
@@ -71,6 +72,7 @@ export default function Navbar() {
             >
               Book Intro — $47
             </Link>
+            <ThemeToggle />
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="lg:hidden p-2 rounded-md text-foreground/70 hover:text-foreground hover:bg-surface-2"

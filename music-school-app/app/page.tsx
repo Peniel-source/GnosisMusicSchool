@@ -228,7 +228,7 @@ export default function HomePage() {
               href="/registration"
               className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold text-base px-8 py-4 rounded-full teal-glow hover:opacity-90 transition-all duration-200"
             >
-              Book Intro Lesson — $47
+              Book Intro Lesson — GH₵47
               <ArrowRight className="w-5 h-5" />
             </Link>
             <Link
@@ -300,8 +300,8 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row items-stretch gap-4">
             {[
               { step: "01", title: "Register Free", desc: "Create your free student profile and tell us about your goals and experience level. It takes under 2 minutes." },
-              { step: "02", title: "Book Your $47 Intro Lesson", desc: "Choose your instrument, pick a time that works, and meet your instructor for a personalized 45-minute session." },
-              { step: "03", title: "Join a Membership", desc: "Love your intro lesson? Lock in your spot with a monthly membership starting at just $156/month." },
+              { step: "02", title: "Book Your GH₵47 Intro Lesson", desc: "Choose your instrument, pick a time that works, and meet your instructor for a personalized 45-minute session." },
+              { step: "03", title: "Join a Membership", desc: "Love your intro lesson? Lock in your spot with a monthly membership starting at just GH₵156/month." },
             ].map((item, i) => (
               <div key={i} className="flex flex-col md:flex-row items-center flex-1">
                 <motion.div
@@ -524,7 +524,7 @@ export default function HomePage() {
                 </span>
               </h2>
               <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-                One $47 intro lesson is all it takes to discover your potential. No commitment required.
+                One GH₵47 intro lesson is all it takes to discover your potential. No commitment required.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Link
