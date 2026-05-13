@@ -31,6 +31,8 @@ import AnimeReveal from "@/components/AnimeReveal";
 import AntigravityParticles from "@/components/AntigravityParticles";
 import AntigravityTextReveal from "@/components/AntigravityTextReveal";
 import { useMousePosition } from "@/lib/hooks/use-mouse-position";
+import ParallaxWrapper from "@/components/ParallaxWrapper";
+import ScrollScaleWrapper from "@/components/ScrollScaleWrapper";
 
 /* ── data ─────────────────────────────────────────────── */
 
@@ -293,34 +295,36 @@ export default function HomePage() {
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">Three simple steps stand between you and a lifetime of musical growth.</p>
         </motion.div>
-        <div className="flex flex-col md:flex-row items-stretch gap-4">
-          {[
-            { step: "01", title: "Register Free", desc: "Create your free student profile and tell us about your goals and experience level. It takes under 2 minutes." },
-            { step: "02", title: "Book Your $47 Intro Lesson", desc: "Choose your instrument, pick a time that works, and meet your instructor for a personalized 45-minute session." },
-            { step: "03", title: "Join a Membership", desc: "Love your intro lesson? Lock in your spot with a monthly membership starting at just $156/month." },
-          ].map((item, i) => (
-            <div key={i} className="flex flex-col md:flex-row items-center flex-1">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15, duration: 0.5 }}
-                className="bg-surface border border-border rounded-2xl p-8 text-center flex-1 hover:border-primary/40 transition-colors h-full"
-              >
-                <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mx-auto mb-5">
-                  <span className="font-heading font-bold text-xl text-primary">{item.step}</span>
-                </div>
-                <h3 className="font-heading font-bold text-xl text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-              </motion.div>
-              {i < 2 && (
-                <div className="flex items-center justify-center w-10 shrink-0 text-primary/30 rotate-90 md:rotate-0 my-2 md:my-0">
-                  <ArrowRight className="w-6 h-6" />
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+        <ScrollScaleWrapper>
+          <div className="flex flex-col md:flex-row items-stretch gap-4">
+            {[
+              { step: "01", title: "Register Free", desc: "Create your free student profile and tell us about your goals and experience level. It takes under 2 minutes." },
+              { step: "02", title: "Book Your $47 Intro Lesson", desc: "Choose your instrument, pick a time that works, and meet your instructor for a personalized 45-minute session." },
+              { step: "03", title: "Join a Membership", desc: "Love your intro lesson? Lock in your spot with a monthly membership starting at just $156/month." },
+            ].map((item, i) => (
+              <div key={i} className="flex flex-col md:flex-row items-center flex-1">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.15, duration: 0.5 }}
+                  className="bg-surface border border-border rounded-2xl p-8 text-center flex-1 hover:border-primary/40 transition-colors h-full"
+                >
+                  <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mx-auto mb-5">
+                    <span className="font-heading font-bold text-xl text-primary">{item.step}</span>
+                  </div>
+                  <h3 className="font-heading font-bold text-xl text-foreground mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                </motion.div>
+                {i < 2 && (
+                  <div className="flex items-center justify-center w-10 shrink-0 text-primary/30 rotate-90 md:rotate-0 my-2 md:my-0">
+                    <ArrowRight className="w-6 h-6" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </ScrollScaleWrapper>
       </SectionWrapper>
 
       {/* ── Instruments Grid ── */}
@@ -337,11 +341,13 @@ export default function HomePage() {
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">From classical piano to electric guitar — find your voice in the instrument that moves you.</p>
         </motion.div>
-        <AnimeReveal className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" staggerMs={70}>
-          {instruments.map((inst, i) => (
-            <InstrumentCard key={inst.name + i} {...inst} index={i} />
-          ))}
-        </AnimeReveal>
+        <ParallaxWrapper offset={30}>
+          <AnimeReveal className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" staggerMs={70}>
+            {instruments.map((inst, i) => (
+              <InstrumentCard key={inst.name + i} {...inst} index={i} />
+            ))}
+          </AnimeReveal>
+        </ParallaxWrapper>
       </SectionWrapper>
 
       {/* ── Events ── */}
@@ -381,24 +387,26 @@ export default function HomePage() {
             We&apos;re not just a music school — we&apos;re a creative community built on standards that make a real difference.
           </p>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {whyUs.map((item, i) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ delay: i * 0.08, duration: 0.5 }}
-              className="bg-background border border-border rounded-2xl p-6 hover:border-primary/40 transition-colors"
-            >
-              <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4">
-                <item.icon className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="font-heading font-semibold text-lg text-foreground mb-2">{item.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-            </motion.div>
-          ))}
-        </div>
+        <ScrollScaleWrapper>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whyUs.map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ delay: i * 0.08, duration: 0.5 }}
+                className="bg-background border border-border rounded-2xl p-6 hover:border-primary/40 transition-colors"
+              >
+                <div className="w-11 h-11 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4">
+                  <item.icon className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="font-heading font-semibold text-lg text-foreground mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </ScrollScaleWrapper>
       </SectionWrapper>
 
       {/* ── Programs by Age ── */}
@@ -487,36 +495,38 @@ export default function HomePage() {
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/8 blur-[120px] rounded-full" />
         </div>
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="font-heading font-black text-4xl lg:text-6xl text-foreground mb-6">
-              <AntigravityTextReveal text="Your Musical Journey " />
-              <span className="gradient-text">
-                <AntigravityTextReveal text="Starts Today" delay={0.4} />
-              </span>
-            </h2>
-            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-              One $47 intro lesson is all it takes to discover your potential. No commitment required.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link
-                href="/registration"
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-bold text-lg px-10 py-4 rounded-full teal-glow hover:opacity-90 transition-all"
-              >
-                Book Your Intro Lesson <ArrowRight className="w-5 h-5" />
-              </Link>
-              <a href="tel:+15551234567" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-medium">
-                <CalendarDays className="w-5 h-5 text-primary" />
-                Call Us: +1 (555) 123-4567
-              </a>
-            </div>
-          </motion.div>
-        </div>
+        <ParallaxWrapper offset={-40}>
+          <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="font-heading font-black text-4xl lg:text-6xl text-foreground mb-6">
+                <AntigravityTextReveal text="Your Musical Journey " />
+                <span className="gradient-text">
+                  <AntigravityTextReveal text="Starts Today" delay={0.4} />
+                </span>
+              </h2>
+              <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+                One $47 intro lesson is all it takes to discover your potential. No commitment required.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Link
+                  href="/registration"
+                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-bold text-lg px-10 py-4 rounded-full teal-glow hover:opacity-90 transition-all"
+                >
+                  Book Your Intro Lesson <ArrowRight className="w-5 h-5" />
+                </Link>
+                <a href="tel:+15551234567" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-medium">
+                  <CalendarDays className="w-5 h-5 text-primary" />
+                  Call Us: +1 (555) 123-4567
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </ParallaxWrapper>
       </section>
 
       {/* ── Blog Preview ── */}

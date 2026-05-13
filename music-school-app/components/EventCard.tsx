@@ -1,8 +1,9 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { CalendarDays, MapPin, ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
@@ -23,8 +24,17 @@ export default function EventCard({
   description,
   index = 0,
 }: EventCardProps) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
+
   return (
     <motion.article
+      ref={ref}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
@@ -32,13 +42,15 @@ export default function EventCard({
       className="group bg-surface border border-border rounded-2xl overflow-hidden hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_30px_oklch(0.72_0.155_182/15%)]"
     >
       <div className="relative h-48 overflow-hidden">
-        <Image
-          src={`/placeholder.svg?width=600&height=300&text=${encodeURIComponent(title)}`}
-          alt={title}
-          fill
-          unoptimized={true}
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
-        />
+        <motion.div style={{ scale }} className="absolute inset-0">
+          <Image
+            src={`/placeholder.svg?width=600&height=300&text=${encodeURIComponent(title)}`}
+            alt={title}
+            fill
+            unoptimized={true}
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        </motion.div>
         <div className="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent" />
         <Badge className="absolute top-3 right-3 bg-primary text-primary-foreground border-0">
           {type}
