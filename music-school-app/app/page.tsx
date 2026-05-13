@@ -30,6 +30,7 @@ import AnimeWaveform from "@/components/AnimeWaveform";
 import AnimeReveal from "@/components/AnimeReveal";
 import AntigravityParticles from "@/components/AntigravityParticles";
 import AntigravityTextReveal from "@/components/AntigravityTextReveal";
+import InstructorSlider from "@/components/InstructorSlider";
 import { useMousePosition } from "@/lib/hooks/use-mouse-position";
 import ParallaxWrapper from "@/components/ParallaxWrapper";
 import ScrollScaleWrapper from "@/components/ScrollScaleWrapper";
@@ -370,6 +371,19 @@ export default function HomePage() {
           ))}
         </div>
       </SectionWrapper>
+
+      {/* ── Instructors Slider ── */}
+      <section className="bg-surface py-20 border-y border-border">
+        <div className="max-w-7xl mx-auto px-4 text-center mb-10">
+          <h2 className="font-heading font-bold text-4xl lg:text-6xl text-foreground mb-4">
+            <AntigravityTextReveal text="Learn From the Best" />
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Our faculty consists of world-class performers and dedicated educators committed to your musical growth.
+          </p>
+        </div>
+        <InstructorSlider />
+      </section>
 
       {/* ── Why Choose Us ── */}
       <SectionWrapper variant="surface">
