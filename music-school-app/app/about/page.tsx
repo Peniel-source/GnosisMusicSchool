@@ -111,6 +111,7 @@ export default function AboutPage() {
               src="/placeholder.svg?width=700&height=600&text=Our+Studio"
               alt="Gnosis Music Academy Studio"
               fill
+              unoptimized
               className="object-cover"
             />
           </motion.div>

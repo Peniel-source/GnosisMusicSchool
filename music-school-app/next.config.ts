@@ -6,12 +6,10 @@ const nextConfig: NextConfig = {
     contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-  experimental: {
-    turbo: {
-      // Turbopack has a path-resolution bug with '#' in Windows usernames.
-      // Keeping this object empty forces the webpack compiler for now.
-    },
-  },
+  // Turbopack has a path-resolution bug on Windows when the username contains '#'.
+  // It corrupts paths by inserting null bytes at the '#' position.
+  // Force webpack until upstream fixes this.
+  bundlePagesRouterDependencies: false,
 };
 
 export default nextConfig;

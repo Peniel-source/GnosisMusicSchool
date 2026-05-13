@@ -35,6 +35,7 @@ export default function InstructorCard({
           src={`/placeholder.svg?width=400&height=320&text=${encodeURIComponent(name)}`}
           alt={name}
           fill
+          unoptimized
           className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent" />

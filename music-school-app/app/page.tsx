@@ -430,6 +430,7 @@ export default function HomePage() {
                     src={`/placeholder.svg?width=700&height=500&text=${encodeURIComponent(prog.title)}`}
                     alt={prog.title}
                     fill
+                    unoptimized
                     className="object-cover"
                   />
                 </div>
@@ -533,6 +534,7 @@ export default function HomePage() {
                   src={`/placeholder.svg?width=600&height=220&text=${encodeURIComponent(post.tag)}`}
                   alt={post.title}
                   fill
+                  unoptimized
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
