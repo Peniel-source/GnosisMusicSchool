@@ -94,7 +94,7 @@ export default function InstructorSlider() {
               </div>
               
               {/* Play-like Button Decoration */}
-              <div className="absolute bottom-10 right-10 w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
+              <div className="absolute bottom-10 right-10 w-16 h-16 rounded-full bg-background/20 backdrop-blur-md border border-white/20 flex items-center justify-center">
                 <ArrowRight className="w-6 h-6 text-white" />
               </div>
             </motion.div>
