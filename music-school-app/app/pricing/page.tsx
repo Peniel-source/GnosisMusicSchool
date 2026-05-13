@@ -67,8 +67,8 @@ const tiers = [
 
 const faqs = [
   {
-    q: "What's included in the $47 intro lesson?",
-    a: "Your intro lesson is a full 45-minute one-on-one session with a specialist instructor in your chosen instrument. It's a real lesson — not a sales call. We'll assess your current level, discuss your goals, and create a personalized plan. If you decide to join a membership, the $47 is credited toward your first month.",
+    q: "What's included in the GH₵47 intro lesson?",
+    a: "Your intro lesson is a full 45-minute one-on-one session with a specialist instructor in your chosen instrument. It's a real lesson — not a sales call. We'll assess your current level, discuss your goals, and create a personalized plan. If you decide to join a membership, the GH₵47 is credited toward your first month.",
   },
   {
     q: "Can I cancel my membership at any time?",
@@ -137,11 +137,11 @@ export default function PricingPage() {
           </div>
           <h2 className="font-heading font-black text-4xl text-foreground mb-2">Intro Lesson</h2>
           <div className="flex items-end justify-center gap-1 mb-4">
-            <span className="font-heading font-black text-7xl text-primary">$47</span>
+            <span className="font-heading font-black text-7xl text-primary">GH₵47</span>
             <span className="text-muted-foreground mb-3">/ one-time</span>
           </div>
           <p className="text-muted-foreground mb-8 max-w-lg mx-auto leading-relaxed">
-            A full 45-minute private lesson with a specialist instructor. Real instruction, honest feedback, and a personalized plan — no pressure to commit. The $47 credits toward your first month if you join.
+            A full 45-minute private lesson with a specialist instructor. Real instruction, honest feedback, and a personalized plan — no pressure to commit. The GH₵47 credits toward your first month if you join.
           </p>
           <ul className="flex flex-col sm:flex-row flex-wrap gap-3 justify-center mb-8">
             {["Any instrument", "Any skill level", "Any age", "45 minutes 1-on-1", "Personalized plan"].map((f) => (
@@ -196,7 +196,7 @@ export default function PricingPage() {
                 <h3 className="font-heading font-bold text-2xl text-foreground mb-1">{tier.name}</h3>
                 <p className="text-sm text-muted-foreground mb-4">{tier.description}</p>
                 <div className="flex items-end gap-1">
-                  <span className="font-heading font-black text-5xl text-primary">${tier.price}</span>
+                  <span className="font-heading font-black text-5xl text-primary">GH₵{tier.price}</span>
                   <span className="text-muted-foreground mb-1.5">/month</span>
                 </div>
               </div>
