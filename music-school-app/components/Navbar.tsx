@@ -70,7 +70,7 @@ export default function Navbar() {
               href="/registration"
               className="hidden sm:inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-teal-light transition-colors duration-200 teal-glow"
             >
-              Book Intro — $47
+              Book Intro — GH₵47
             </Link>
             <ThemeToggle />
             <button
@@ -122,7 +122,7 @@ export default function Navbar() {
                   onClick={() => setMenuOpen(false)}
                   className="block w-full text-center bg-primary text-primary-foreground font-semibold py-3 rounded-full teal-glow"
                 >
-                  Book Intro Lesson — $47
+                  Book Intro Lesson — GH₵47
                 </Link>
               </motion.div>
             </nav>

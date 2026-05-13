@@ -95,8 +95,7 @@ export default function AntigravityParticles() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.45 }}
+      className="fixed inset-0 pointer-events-none z-0 opacity-15 dark:opacity-45"
       aria-hidden="true"
     />
   );
