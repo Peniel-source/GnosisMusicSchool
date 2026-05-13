@@ -25,7 +25,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Gnosis Fundamental Music Academy",
   description:
-    "World-class music education for kids, teens, and adults. Private lessons, group workshops, and live performances. Book your $47 intro lesson today.",
+    "World-class music education for kids, teens, and adults. Private lessons, group workshops, and live performances. Book your GH₵47 intro lesson today.",
   keywords: "music school, music lessons, piano, guitar, vocals, drums, music academy",
 };
 

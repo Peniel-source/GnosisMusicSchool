@@ -81,7 +81,7 @@ export default function RegistrationPage() {
         {/* Header */}
         <div className="text-center mb-10">
           <span className="inline-block bg-primary/10 border border-primary/30 text-primary text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">
-            Book Intro Lesson — $47
+            Book Intro Lesson — GH₵47
           </span>
           <h1 className="font-heading font-black text-4xl text-foreground mb-2">Start Your Journey</h1>
           <p className="text-muted-foreground">Complete the form below and we&apos;ll match you with the perfect instructor.</p>
@@ -258,7 +258,7 @@ export default function RegistrationPage() {
                   <div className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/30 rounded-xl p-5">
                     <div className="flex justify-between items-center mb-2">
                       <span className="font-semibold text-foreground">Intro Lesson (45 min)</span>
-                      <span className="font-heading font-bold text-2xl text-primary">$47</span>
+                      <span className="font-heading font-bold text-2xl text-primary">GH₵47</span>
                     </div>
                     <p className="text-xs text-muted-foreground">Credit applied toward first membership month if you join.</p>
                   </div>
@@ -301,7 +301,7 @@ export default function RegistrationPage() {
                   type="submit"
                   className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-bold px-6 py-2.5 rounded-full teal-glow hover:opacity-90 transition-all text-sm"
                 >
-                  Book My Intro — $47 <CheckCircle2 className="w-4 h-4" />
+                  Book My Intro — GH₵47 <CheckCircle2 className="w-4 h-4" />
                 </button>
               )}
             </div>

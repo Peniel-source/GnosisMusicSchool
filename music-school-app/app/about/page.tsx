@@ -8,15 +8,15 @@ import SectionWrapper from "@/components/SectionWrapper";
 import InstructorCard from "@/components/InstructorCard";
 
 const instructors = [
-  { name: "Dr. Amara Nkosi", role: "Lead Vocal Coach", instrument: "Vocals", bio: "Dr. Nkosi holds a Doctorate in Music Performance from Berklee College of Music and has performed in over 20 countries. She brings a nurturing, technique-first approach to every student, specializing in classical, gospel, and contemporary styles." },
-  { name: "James Harrington", role: "Piano Instructor", instrument: "Piano", bio: "A graduate of the Royal Conservatory of Music, James has 15 years of teaching experience spanning classical theory, jazz improvisation, and modern composition. His students consistently advance to competitive recitals." },
-  { name: "Sofia Reyes", role: "Guitar Specialist", instrument: "Guitar / Bass", bio: "Sofia is a session musician with credits on over 40 commercial albums. She teaches acoustic, electric, and bass guitar with a genre-inclusive approach that keeps students motivated and progressing quickly." },
-  { name: "Marcus Webb", role: "Drum & Percussion", instrument: "Drums", bio: "With a background in jazz, funk, and orchestral percussion, Marcus is one of the city's most sought-after rhythm educators. His curriculum builds rock-solid fundamentals while making every lesson feel like a jam session." },
-  { name: "Priya Sundaram", role: "Strings & Theory", instrument: "Violin / Theory", bio: "Priya trained at the Juilliard Pre-College program before completing her degree at Manhattan School of Music. She excels at making complex music theory intuitive and accessible for students at all levels." },
-  { name: "Liam O'Brien", role: "Brass Instructor", instrument: "Trumpet / Brass", bio: "A former first-chair trumpeter with the National Symphony, Liam now dedicates his passion to teaching. He specializes in breath control, range development, and classical-to-jazz transition for brass students." },
-  { name: "Yuki Tanaka", role: "Electronic & Production", instrument: "Production / Synth", bio: "Yuki bridges the gap between traditional musicianship and modern production. She teaches synthesis, DAW production, and music technology alongside core theory — preparing students for the future of music." },
-  { name: "Carlos Mendez", role: "Guitar & Composition", instrument: "Electric Guitar", bio: "With a Masters in Music Composition from UCLA, Carlos specializes in electric guitar technique, original songwriting, and music theory for guitarists. His students have placed in national songwriting competitions." },
-  { name: "Fatima Al-Hassan", role: "Early Childhood Music", instrument: "Kids Programs", bio: "Fatima holds a dual certification in Music Education and Early Childhood Development. Her play-based curriculum has introduced hundreds of children aged 3–8 to the joy of music through movement, storytelling, and discovery." },
+  { name: "Dr. Amara Nkosi", role: "Lead Vocal Coach", instrument: "Vocals", bio: "Dr. Nkosi holds a Doctorate in Music Performance from Berklee College of Music and has performed in over 20 countries. She brings a nurturing, technique-first approach to every student, specializing in classical, gospel, and contemporary styles.", image: "/instructor-amara.png" },
+  { name: "James Harrington", role: "Piano Instructor", instrument: "Piano", bio: "A graduate of the Royal Conservatory of Music, James has 15 years of teaching experience spanning classical theory, jazz improvisation, and modern composition. His students consistently advance to competitive recitals.", image: "/instructor-james.png" },
+  { name: "Sofia Reyes", role: "Guitar Specialist", instrument: "Guitar / Bass", bio: "Sofia is a session musician with credits on over 40 commercial albums. She teaches acoustic, electric, and bass guitar with a genre-inclusive approach that keeps students motivated and progressing quickly.", image: "/instructor-sofia.png" },
+  { name: "Marcus Webb", role: "Drum & Percussion", instrument: "Drums", bio: "With a background in jazz, funk, and orchestral percussion, Marcus is one of the city's most sought-after rhythm educators. His curriculum builds rock-solid fundamentals while making every lesson feel like a jam session.", image: "/instructor-marcus.png" },
+  { name: "Priya Sundaram", role: "Strings & Theory", instrument: "Violin / Theory", bio: "Priya trained at the Juilliard Pre-College program before completing her degree at Manhattan School of Music. She excels at making complex music theory intuitive and accessible for students at all levels.", image: "/studio-main.png" },
+  { name: "Liam O'Brien", role: "Brass Instructor", instrument: "Trumpet / Brass", bio: "A former first-chair trumpeter with the National Symphony, Liam now dedicates his passion to teaching. He specializes in breath control, range development, and classical-to-jazz transition for brass students.", image: "/studio-main.png" },
+  { name: "Yuki Tanaka", role: "Electronic & Production", instrument: "Production / Synth", bio: "Yuki bridges the gap between traditional musicianship and modern production. She teaches synthesis, DAW production, and music technology alongside core theory — preparing students for the future of music.", image: "/studio-main.png" },
+  { name: "Carlos Mendez", role: "Guitar & Composition", instrument: "Electric Guitar", bio: "With a Masters in Music Composition from UCLA, Carlos specializes in electric guitar technique, original songwriting, and music theory for guitarists. His students have placed in national songwriting competitions.", image: "/studio-main.png" },
+  { name: "Fatima Al-Hassan", role: "Early Childhood Music", instrument: "Kids Programs", bio: "Fatima holds a dual certification in Music Education and Early Childhood Development. Her play-based curriculum has introduced hundreds of children aged 3–8 to the joy of music through movement, storytelling, and discovery.", image: "/studio-main.png" },
 ];
 
 const whyUs = [
@@ -108,10 +108,9 @@ export default function AboutPage() {
             className="relative h-80 md:h-[500px] rounded-2xl overflow-hidden border border-border"
           >
             <Image
-              src="/placeholder.svg?width=700&height=600&text=Our+Studio"
+              src="/studio-main.png"
               alt="Gnosis Music Academy Studio"
               fill
-              unoptimized
               className="object-cover"
             />
           </motion.div>
@@ -181,12 +180,12 @@ export default function AboutPage() {
           viewport={{ once: true }}
         >
           <h2 className="font-heading font-bold text-4xl text-foreground mb-4">Ready to Begin?</h2>
-          <p className="text-muted-foreground mb-8 max-w-md mx-auto">Book your $47 intro lesson and experience the Gnosis difference firsthand.</p>
+          <p className="text-muted-foreground mb-8 max-w-md mx-auto">Book your GH₵47 intro lesson and experience the Gnosis difference firsthand.</p>
           <Link
             href="/registration"
             className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-bold px-10 py-4 rounded-full teal-glow hover:opacity-90 transition-all text-base"
           >
-            Book Intro Lesson — $47 <ArrowRight className="w-5 h-5" />
+            Book Intro Lesson — GH₵47 <ArrowRight className="w-5 h-5" />
           </Link>
         </motion.div>
       </section>

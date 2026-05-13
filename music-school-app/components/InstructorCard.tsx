@@ -11,6 +11,7 @@ interface InstructorCardProps {
   instrument: string;
   bio: string;
   index?: number;
+  image?: string;
 }
 
 export default function InstructorCard({
@@ -19,6 +20,7 @@ export default function InstructorCard({
   instrument,
   bio,
   index = 0,
+  image,
 }: InstructorCardProps) {
   const [expanded, setExpanded] = useState(false);
 
@@ -32,10 +34,9 @@ export default function InstructorCard({
     >
       <div className="relative h-64 overflow-hidden">
         <Image
-          src={`/placeholder.svg?width=400&height=320&text=${encodeURIComponent(name)}`}
+          src={image || `/placeholder.svg?width=400&height=320&text=${encodeURIComponent(name)}`}
           alt={name}
           fill
-          unoptimized
           className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent" />

@@ -44,10 +44,9 @@ export default function EventCard({
       <div className="relative h-48 overflow-hidden">
         <motion.div style={{ scale }} className="absolute inset-0">
           <Image
-            src={`/placeholder.svg?width=600&height=300&text=${encodeURIComponent(title)}`}
+            src="/studio-main.png"
             alt={title}
             fill
-            unoptimized={true}
             className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
         </motion.div>
