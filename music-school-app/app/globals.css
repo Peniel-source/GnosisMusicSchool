@@ -1,0 +1,142 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-dm-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-playfair);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  /* Brand custom tokens */
+  --color-teal: var(--teal);
+  --color-teal-light: var(--teal-light);
+  --color-teal-dark: var(--teal-dark);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+}
+
+:root {
+  /* ── Gnosis Brand Palette ── */
+  /* Near-black background from logo */
+  --background: oklch(0.07 0.012 258);
+  --foreground: oklch(0.96 0.004 88);
+
+  /* Card surfaces */
+  --card: oklch(0.10 0.010 258);
+  --card-foreground: oklch(0.96 0.004 88);
+  --popover: oklch(0.10 0.010 258);
+  --popover-foreground: oklch(0.96 0.004 88);
+
+  /* Teal primary from "GNOSIS" logo text */
+  --primary: oklch(0.72 0.155 182);
+  --primary-foreground: oklch(0.07 0.012 258);
+
+  /* Slightly-lighter surface for secondary */
+  --secondary: oklch(0.14 0.010 258);
+  --secondary-foreground: oklch(0.96 0.004 88);
+
+  --muted: oklch(0.14 0.010 258);
+  --muted-foreground: oklch(0.58 0.012 258);
+
+  --accent: oklch(0.72 0.155 182);
+  --accent-foreground: oklch(0.07 0.012 258);
+
+  --destructive: oklch(0.577 0.245 27.325);
+
+  /* Subtle teal-tinted border */
+  --border: oklch(0.72 0.155 182 / 18%);
+  --input: oklch(0.14 0.010 258);
+  --ring: oklch(0.72 0.155 182);
+  --radius: 0.5rem;
+
+  /* Sidebar */
+  --sidebar: oklch(0.10 0.010 258);
+  --sidebar-foreground: oklch(0.96 0.004 88);
+  --sidebar-primary: oklch(0.72 0.155 182);
+  --sidebar-primary-foreground: oklch(0.07 0.012 258);
+  --sidebar-accent: oklch(0.14 0.010 258);
+  --sidebar-accent-foreground: oklch(0.96 0.004 88);
+  --sidebar-border: oklch(0.72 0.155 182 / 18%);
+  --sidebar-ring: oklch(0.72 0.155 182);
+
+  /* Brand tokens */
+  --teal: oklch(0.72 0.155 182);
+  --teal-light: oklch(0.80 0.135 182);
+  --teal-dark: oklch(0.58 0.140 182);
+  --surface: oklch(0.10 0.010 258);
+  --surface-2: oklch(0.14 0.010 258);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-dm-sans), sans-serif;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), serif;
+  }
+}
+
+/* Animated music note floats */
+@keyframes float-note {
+  0%   { transform: translateY(0px) rotate(0deg); opacity: 0.15; }
+  50%  { opacity: 0.35; }
+  100% { transform: translateY(-120px) rotate(20deg); opacity: 0; }
+}
+.float-note {
+  animation: float-note 6s ease-in-out infinite;
+}
+
+/* Glow effect for teal elements */
+.teal-glow {
+  box-shadow: 0 0 30px oklch(0.72 0.155 182 / 25%);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, oklch(0.80 0.135 182), oklch(0.72 0.155 182));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
