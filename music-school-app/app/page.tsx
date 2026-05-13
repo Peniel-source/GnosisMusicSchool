@@ -27,6 +27,7 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import InstrumentCard from "@/components/InstrumentCard";
 import EventCard from "@/components/EventCard";
 import AnimeWaveform from "@/components/AnimeWaveform";
+import TestimonialSlider from "@/components/TestimonialSlider";
 import AnimeReveal from "@/components/AnimeReveal";
 import AntigravityParticles from "@/components/AntigravityParticles";
 import AntigravityTextReveal from "@/components/AntigravityTextReveal";
@@ -547,6 +548,11 @@ export default function HomePage() {
             </motion.div>
           </div>
         </ParallaxWrapper>
+      </section>
+
+      {/* ── Testimonials ── */}
+      <section className="py-24 bg-background">
+        <TestimonialSlider />
       </section>
 
       {/* ── Blog Preview ── */}
