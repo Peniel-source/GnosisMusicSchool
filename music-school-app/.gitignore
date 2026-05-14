@@ -47,11 +47,4 @@ next-env.d.ts
 # temp/backup directories
 node_modules_tmp/
 node_modules_tmp2/
-public/Images_tmp/
-public/Images_tmp2/
-public/v1_tmp
-public/v2_tmp
-public/v3_tmp
-public/video-4.mov_tmp
-public/video-4.mov_tmp2
 test-deploy/
