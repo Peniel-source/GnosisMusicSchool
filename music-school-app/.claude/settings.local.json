@@ -2,7 +2,16 @@
   "permissions": {
     "allow": [
       "Bash(node -e \"const p=require\\('./package.json'\\); console.log\\(JSON.stringify\\(Object.keys\\({...p.dependencies,...\\(p.devDependencies||{}\\)}\\),null,2\\)\\)\")",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(cp \"Images/WhatsApp Image 2026-05-14 at 11.01.05 AM.jpeg\" \"hero-bg.jpeg\")",
+      "Bash(cp \"Images/_MG_8692.JPG.jpeg\" \"program-kids.jpeg\")",
+      "Bash(cp \"Images/IMG_2516.JPG.jpeg\" \"program-teens.jpeg\")",
+      "Bash(cp \"Images/WhatsApp Image 2026-05-14 at 11.01.04 AM.jpeg\" \"program-adults.jpeg\")",
+      "Bash(cp \"Images/IMG_2580.JPG.jpeg\" \"program-private.jpeg\")",
+      "Bash(cp \"Images/WhatsApp Video 2026-05-14 at 11.02.13 AM.mp4\" \"video-1.mp4\")",
+      "Bash(cp \"Images/WhatsApp Video 2026-05-14 at 11.02.13 AM \\(1\\).mp4\" \"video-2.mp4\")",
+      "Bash(cp \"Images/WhatsApp Video 2026-05-14 at 11.02.14 AM.mp4\" \"video-3.mp4\")",
+      "Bash(cp \"Images/IMG_1029.MOV\" \"video-4.mov\")"
     ]
   }
 }

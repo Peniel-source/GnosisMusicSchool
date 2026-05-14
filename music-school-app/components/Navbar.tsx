@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Music } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
 
@@ -38,14 +38,21 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
-              <Music className="w-5 h-5 text-primary" />
+            <div className="w-10 h-10 rounded-full overflow-hidden shrink-0">
+              <Image
+                src="/Images/logo.jpeg"
+                alt="Gnosis Music School"
+                width={40}
+                height={40}
+                className="object-cover w-full h-full"
+                priority
+              />
             </div>
             <div className="hidden sm:block">
               <p className="font-heading font-bold text-base leading-tight text-foreground">
                 GNOSIS
               </p>
-              <p className="text-[10px] tracking-widest text-primary uppercase leading-none">
+              <p className="text-[10px] tracking-widest text-primary uppercase leading-none font-semibold">
                 Fundamental Music Academy
               </p>
             </div>

@@ -27,6 +27,10 @@ export const metadata: Metadata = {
   description:
     "World-class music education for kids, teens, and adults. Private lessons, group workshops, and live performances. Book your GH₵47 intro lesson today.",
   keywords: "music school, music lessons, piano, guitar, vocals, drums, music academy",
+  icons: {
+    icon: "/Images/logo.jpeg",
+    apple: "/Images/logo.jpeg",
+  },
 };
 
 export default function RootLayout({

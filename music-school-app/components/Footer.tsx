@@ -36,8 +36,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center">
-                <Music className="w-5 h-5 text-primary" />
+              <div className="w-10 h-10 rounded-full overflow-hidden shrink-0">
+                <img
+                  src="/Images/logo.jpeg"
+                  alt="Gnosis Music School"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <p className="font-heading font-bold text-base text-foreground leading-tight">GNOSIS</p>

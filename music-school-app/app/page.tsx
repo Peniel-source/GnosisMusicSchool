@@ -28,6 +28,7 @@ import InstrumentCard from "@/components/InstrumentCard";
 import EventCard from "@/components/EventCard";
 import AnimeWaveform from "@/components/AnimeWaveform";
 import TestimonialSlider from "@/components/TestimonialSlider";
+import VideoSlider from "@/components/VideoSlider";
 import AnimeReveal from "@/components/AnimeReveal";
 import AntigravityParticles from "@/components/AntigravityParticles";
 import AntigravityTextReveal from "@/components/AntigravityTextReveal";
@@ -87,25 +88,25 @@ const programs = {
     title: "Kids (Ages 4–9)",
     description: "Our youngest musicians discover the joy of music through play-based learning, movement, and creativity. We nurture curiosity, build foundational rhythm and pitch skills, and instill a lifelong love of music in a safe, encouraging environment built specifically for little learners.",
     features: ["30-minute individual lessons", "Group rhythm classes", "Twice-yearly recitals", "Take-home practice guides"],
-    image: "/program-kids.png",
+    image: "/program-kids.jpeg",
   },
   teens: {
     title: "Kids & Teens (Ages 10–17)",
     description: "Pre-teens and teens thrive in our dynamic program that balances technical mastery with creative freedom. Students explore genres they love, work in ensembles, record original music, and build real-world performance confidence.",
     features: ["45-minute individual lessons", "Ensemble & band workshops", "Studio recording sessions", "Competition prep support"],
-    image: "/program-teens.png",
+    image: "/program-teens.jpeg",
   },
   adults: {
     title: "Adults (18+)",
     description: "Whether you're picking up an instrument for the first time or returning after years away, our adult program meets you exactly where you are. No judgment, no pressure — just skilled guidance and genuine progress at your own pace.",
     features: ["60-minute individual lessons", "Adult ensemble groups", "Flexible weeknight hours", "Theory workshops"],
-    image: "/program-adults.png",
+    image: "/program-adults.jpeg",
   },
   private: {
     title: "Private Lessons",
     description: "Our flagship one-on-one lessons are fully customized to your goals, timeline, and learning style. Work directly with a specialist instructor in a dedicated weekly session, track your progress with milestone reviews, and accelerate toward your musical ambitions.",
     features: ["Any instrument, any level", "Customized curriculum", "Monthly progress reviews", "Priority scheduling"],
-    image: "/program-private.png",
+    image: "/program-private.jpeg",
   },
 };
 
@@ -115,21 +116,21 @@ const blogPosts = [
     date: "April 28, 2025",
     excerpt: "Not sure if your 4-year-old is ready for piano? Here's what developmental experts and our instructors say about the right age to start.",
     tag: "Parenting & Music",
-    image: "/blog-parenting.png",
+    image: "/blog-parenting.jpeg",
   },
   {
     title: "How to Practice Effectively in Just 20 Minutes a Day",
     date: "April 14, 2025",
     excerpt: "Quantity isn't the secret to rapid musical progress — focused, intentional practice is. We break down the method that works for all skill levels.",
     tag: "Practice Tips",
-    image: "/blog-practice.png",
+    image: "/blog-practice.jpeg",
   },
   {
     title: "The Science Behind Why Music Makes Kids Smarter",
     date: "March 31, 2025",
     excerpt: "A growing body of research links early music education to improved math skills, reading comprehension, and emotional intelligence. Here's the data.",
     tag: "Research",
-    image: "/blog-research.png",
+    image: "/blog-research.jpeg",
   },
 ];
 
@@ -164,7 +165,7 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero-bg.png"
+            src="/hero-bg.jpeg"
             alt="Music Studio"
             fill
             priority
@@ -548,6 +549,11 @@ export default function HomePage() {
             </motion.div>
           </div>
         </ParallaxWrapper>
+      </section>
+
+      {/* ── Video Slider ── */}
+      <section className="py-24 bg-surface border-y border-border">
+        <VideoSlider />
       </section>
 
       {/* ── Testimonials ── */}
