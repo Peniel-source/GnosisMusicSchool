@@ -26,16 +26,18 @@ import SectionWrapper from "@/components/SectionWrapper";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import InstrumentCard from "@/components/InstrumentCard";
 import EventCard from "@/components/EventCard";
-import AnimeWaveform from "@/components/AnimeWaveform";
-import TestimonialSlider from "@/components/TestimonialSlider";
-import VideoSlider from "@/components/VideoSlider";
+import dynamic from "next/dynamic";
 import AnimeReveal from "@/components/AnimeReveal";
 import AntigravityParticles from "@/components/AntigravityParticles";
 import AntigravityTextReveal from "@/components/AntigravityTextReveal";
-import InstructorSlider from "@/components/InstructorSlider";
 import { useMousePosition } from "@/lib/hooks/use-mouse-position";
 import ParallaxWrapper from "@/components/ParallaxWrapper";
 import ScrollScaleWrapper from "@/components/ScrollScaleWrapper";
+
+const AnimeWaveform    = dynamic(() => import("@/components/AnimeWaveform"),    { ssr: false });
+const InstructorSlider = dynamic(() => import("@/components/InstructorSlider"), { ssr: false });
+const VideoSlider      = dynamic(() => import("@/components/VideoSlider"),      { ssr: false });
+const TestimonialSlider= dynamic(() => import("@/components/TestimonialSlider"),{ ssr: false });
 
 /* ── data ─────────────────────────────────────────────── */
 
@@ -152,7 +154,7 @@ export default function HomePage() {
   return (
     <>
       <AntigravityParticles />
-      
+
       {/* Mouse Glow */}
       <motion.div
         className="pointer-events-none fixed inset-0 z-10 opacity-30 blur-[100px]"
@@ -169,6 +171,7 @@ export default function HomePage() {
             alt="Music Studio"
             fill
             priority
+            sizes="100vw"
             className="object-cover opacity-100"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background/40 dark:from-background/80 dark:via-background/20 dark:to-background/80" />
@@ -176,17 +179,17 @@ export default function HomePage() {
         </div>
 
         <div className="absolute inset-0 pointer-events-none z-10 opacity-0 dark:opacity-100">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/10 blur-[120px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] sm:w-[500px] sm:h-[500px] lg:w-[700px] lg:h-[700px] rounded-full bg-primary/10 blur-[120px]" />
           {/* Animejs equalizer waveform — bottom of hero */}
           <div className="absolute bottom-16 left-1/2 -translate-x-1/2 text-primary/15 w-full flex justify-center overflow-hidden">
-            <AnimeWaveform bars={48} />
+            <AnimeWaveform bars={28} />
           </div>
         </div>
 
         {notePositions.map((note, i) => (
           <div key={i} className="absolute bottom-0 select-none pointer-events-none" style={{ left: note.x }}>
             <motion.span
-              className="text-3xl text-primary/20 block"
+              className="text-xl sm:text-3xl text-primary/20 block"
               animate={{ y: [-10, -150], opacity: [0.15, 0.35, 0] }}
               transition={{ duration: note.duration, delay: note.delay, repeat: Infinity, ease: "easeOut" }}
             >
@@ -206,7 +209,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-heading font-black text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-foreground leading-[1.05] mb-6"
+            className="font-heading font-black text-4xl sm:text-5xl lg:text-7xl xl:text-8xl text-foreground leading-[1.05] mb-6"
           >
             <AntigravityTextReveal text="Learn Music From " />
             <br className="hidden sm:block" />
@@ -292,50 +295,63 @@ export default function HomePage() {
       </div>
 
       {/* ── How It Works ── */}
-      <SectionWrapper variant="default">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-14"
-        >
-          <h2 className="font-heading font-bold text-4xl lg:text-5xl text-foreground mb-4">
-            <AntigravityTextReveal text="How It Works" />
-          </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">Three simple steps stand between you and a lifetime of musical growth.</p>
-        </motion.div>
-        <ScrollScaleWrapper>
-          <div className="flex flex-col md:flex-row items-stretch gap-4">
-            {[
-              { step: "01", title: "Register Free", desc: "Create your free student profile and tell us about your goals and experience level. It takes under 2 minutes." },
-              { step: "02", title: "Book Your GH₵47 Intro Lesson", desc: "Choose your instrument, pick a time that works, and meet your instructor for a personalized 45-minute session." },
-              { step: "03", title: "Join a Membership", desc: "Love your intro lesson? Lock in your spot with a monthly membership starting at just GH₵156/month." },
-            ].map((item, i) => (
-              <div key={i} className="flex flex-col md:flex-row items-center flex-1">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.15, duration: 0.5 }}
-                  className="bg-surface border border-border rounded-2xl p-8 text-center flex-1 hover:border-primary/40 transition-colors h-full"
-                >
-                  <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mx-auto mb-5">
-                    <span className="font-heading font-bold text-xl text-primary">{item.step}</span>
-                  </div>
-                  <h3 className="font-heading font-bold text-xl text-foreground mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-                </motion.div>
-                {i < 2 && (
-                  <div className="flex items-center justify-center w-10 shrink-0 text-primary/30 rotate-90 md:rotate-0 my-2 md:my-0">
-                    <ArrowRight className="w-6 h-6" />
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </ScrollScaleWrapper>
-      </SectionWrapper>
+      <section className="relative py-20 lg:py-28 overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/how-it-does-not-works-bg.jpeg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/75 to-background/90" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-14"
+          >
+            <h2 className="font-heading font-bold text-4xl lg:text-5xl text-foreground mb-4">
+              <AntigravityTextReveal text="How It Works" />
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">Three simple steps stand between you and a lifetime of musical growth.</p>
+          </motion.div>
+          <ScrollScaleWrapper>
+            <div className="flex flex-col md:flex-row items-stretch gap-4">
+              {[
+                { step: "01", title: "Register Free", desc: "Create your free student profile and tell us about your goals and experience level. It takes under 2 minutes." },
+                { step: "02", title: "Book Your GH₵47 Intro Lesson", desc: "Choose your instrument, pick a time that works, and meet your instructor for a personalized 45-minute session." },
+                { step: "03", title: "Join a Membership", desc: "Love your intro lesson? Lock in your spot with a monthly membership starting at just GH₵156/month." },
+              ].map((item, i) => (
+                <div key={i} className="flex flex-col md:flex-row items-center flex-1">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.15, duration: 0.5 }}
+                    className="bg-surface/80 backdrop-blur-sm border border-border rounded-2xl p-8 text-center flex-1 hover:border-primary/40 transition-colors h-full"
+                  >
+                    <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mx-auto mb-5">
+                      <span className="font-heading font-bold text-xl text-primary">{item.step}</span>
+                    </div>
+                    <h3 className="font-heading font-bold text-xl text-foreground mb-2">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                  </motion.div>
+                  {i < 2 && (
+                    <div className="flex items-center justify-center w-10 shrink-0 text-primary/30 rotate-90 md:rotate-0 my-2 md:my-0">
+                      <ArrowRight className="w-6 h-6" />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </ScrollScaleWrapper>
+        </div>
+      </section>
 
       {/* ── Instruments Grid ── */}
       <SectionWrapper variant="surface" id="instruments">
@@ -468,11 +484,12 @@ export default function HomePage() {
           {(Object.entries(programs) as [string, typeof programs.kids][]).map(([key, prog]) => (
             <TabsContent key={key} value={key}>
               <div className="grid md:grid-cols-2 gap-10 items-center">
-                <div className="relative rounded-2xl overflow-hidden h-72 md:h-96 border border-border">
+                <div className="relative rounded-2xl overflow-hidden h-56 sm:h-72 md:h-96 border border-border">
                   <Image
                     src={prog.image}
                     alt={prog.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                   />
                 </div>
@@ -588,6 +605,7 @@ export default function HomePage() {
                   src={post.image}
                   alt={post.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>

@@ -42,7 +42,10 @@ export default function AntigravityParticles() {
 
     const initParticles = () => {
       particles = [];
-      const count = Math.floor((canvas.width * canvas.height) / 10000);
+      const isMobile = canvas.width < 768;
+      const density = isMobile ? 20000 : 10000;
+      const cap = isMobile ? 30 : 80;
+      const count = Math.min(Math.floor((canvas.width * canvas.height) / density), cap);
       for (let i = 0; i < count; i++) {
         particles.push({
           x: Math.random() * canvas.width,

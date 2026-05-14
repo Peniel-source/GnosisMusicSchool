@@ -86,33 +86,35 @@ export default function VideoSlider() {
         <button
           onClick={prev}
           aria-label="Previous video"
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-background border border-border shadow-lg flex items-center justify-center text-foreground hover:text-primary hover:border-primary/50 transition-colors z-10"
+          className="absolute left-2 sm:left-0 sm:-translate-x-1/2 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-background/90 sm:bg-background border border-border shadow-lg flex items-center justify-center text-foreground hover:text-primary hover:border-primary/50 transition-colors z-10"
         >
-          <ChevronLeft className="w-5 h-5" />
+          <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
         </button>
         <button
           onClick={next}
           aria-label="Next video"
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-10 h-10 rounded-full bg-background border border-border shadow-lg flex items-center justify-center text-foreground hover:text-primary hover:border-primary/50 transition-colors z-10"
+          className="absolute right-2 sm:right-0 sm:translate-x-1/2 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-background/90 sm:bg-background border border-border shadow-lg flex items-center justify-center text-foreground hover:text-primary hover:border-primary/50 transition-colors z-10"
         >
-          <ChevronRight className="w-5 h-5" />
+          <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
         </button>
       </div>
 
       {/* Dots + mute toggle */}
       <div className="flex items-center justify-center gap-6 mt-6">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1">
           {videos.map((_, i) => (
             <button
               key={i}
               onClick={() => go(i, i > current ? 1 : -1)}
               aria-label={`Go to video ${i + 1}`}
-              className={`rounded-full transition-all duration-200 ${
+              className="p-2 flex items-center justify-center"
+            >
+              <span className={`rounded-full transition-all duration-200 block ${
                 i === current
                   ? "w-6 h-2 bg-primary"
                   : "w-2 h-2 bg-border hover:bg-primary/50"
-              }`}
-            />
+              }`} />
+            </button>
           ))}
         </div>
 

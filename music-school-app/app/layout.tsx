@@ -3,7 +3,6 @@ import { Playfair_Display, DM_Sans, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ThemeProvider } from "@/components/ThemeProvider";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -41,22 +40,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning
-      className={`${playfair.variable} ${dmSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`dark ${playfair.variable} ${dmSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){var t=localStorage.getItem('theme')||'dark';if(t==='dark')document.documentElement.classList.add('dark');})();`,
-          }}
-        />
-      </head>
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <ThemeProvider>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </ThemeProvider>
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );

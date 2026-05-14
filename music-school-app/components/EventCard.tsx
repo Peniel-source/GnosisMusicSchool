@@ -41,12 +41,13 @@ export default function EventCard({
       transition={{ delay: index * 0.1, duration: 0.5 }}
       className="group bg-surface border border-border rounded-2xl overflow-hidden hover:border-primary/40 transition-all duration-300 hover:shadow-[0_0_30px_oklch(0.72_0.155_182/15%)]"
     >
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-40 sm:h-48 overflow-hidden">
         <motion.div style={{ scale }} className="absolute inset-0">
           <Image
             src="/studio-main.png"
             alt={title}
             fill
+            sizes="(max-width: 768px) 100vw, 33vw"
             className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
         </motion.div>

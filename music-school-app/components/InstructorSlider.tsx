@@ -54,8 +54,8 @@ export default function InstructorSlider() {
   const current = instructors[index];
 
   return (
-    <div className="relative w-full max-w-6xl mx-auto px-4 py-20 overflow-hidden">
-      <div className="grid lg:grid-cols-[1fr_400px] gap-12 items-center">
+    <div className="relative w-full max-w-6xl mx-auto px-4 py-8 sm:py-14 lg:py-20 overflow-hidden">
+      <div className="grid lg:grid-cols-[1fr_400px] gap-8 lg:gap-12 items-center">
         {/* Card Stack / Active Card */}
         <div className="relative">
           <AnimatePresence mode="wait">
@@ -65,21 +65,22 @@ export default function InstructorSlider() {
               animate={{ opacity: 1, x: 0, scale: 1 }}
               exit={{ opacity: 0, x: -50, scale: 0.95 }}
               transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
-              className="relative aspect-[4/3] sm:aspect-[16/9] rounded-[40px] overflow-hidden border border-border/50 shadow-2xl"
+              className="relative aspect-[4/3] sm:aspect-[16/9] rounded-[20px] sm:rounded-[40px] overflow-hidden border border-border/50 shadow-2xl"
             >
               <Image
                 src={current.image}
                 alt={current.name}
                 fill
+                sizes="(max-width: 1024px) 100vw, 60vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-10 left-10 text-white">
-                <motion.h3 
+              <div className="absolute bottom-4 sm:bottom-10 left-4 sm:left-10 text-white">
+                <motion.h3
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="font-heading font-black text-4xl sm:text-6xl mb-2"
+                  className="font-heading font-black text-2xl sm:text-4xl lg:text-6xl mb-1 sm:mb-2"
                 >
                   {current.instrument}
                 </motion.h3>
@@ -94,7 +95,7 @@ export default function InstructorSlider() {
               </div>
               
               {/* Play-like Button Decoration */}
-              <div className="absolute bottom-10 right-10 w-16 h-16 rounded-full bg-background/20 backdrop-blur-md border border-white/20 flex items-center justify-center">
+              <div className="absolute bottom-4 sm:bottom-10 right-4 sm:right-10 w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-background/20 backdrop-blur-md border border-white/20 flex items-center justify-center">
                 <ArrowRight className="w-6 h-6 text-white" />
               </div>
             </motion.div>
@@ -137,7 +138,7 @@ export default function InstructorSlider() {
             >
               <h4 className="font-heading font-bold text-2xl text-foreground mb-1">{current.name}</h4>
               <p className="text-primary font-semibold mb-6 uppercase tracking-widest text-xs">{current.role}</p>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-8">
+              <p className="text-muted-foreground leading-relaxed text-base sm:text-lg mb-6 sm:mb-8">
                 {current.bio}
               </p>
               <Link 

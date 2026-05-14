@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Music, Phone, Mail, MapPin, Globe, MessageCircle, Share2 } from "lucide-react";
+import Image from "next/image";
+import { Phone, Mail, MapPin, Globe, MessageCircle, Share2 } from "lucide-react";
 
 const programs = [
   { label: "Kids Programs", href: "/#programs" },
@@ -37,9 +38,11 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-full overflow-hidden shrink-0">
-                <img
+                <Image
                   src="/Images/logo.jpeg"
                   alt="Gnosis Music School"
+                  width={40}
+                  height={40}
                   className="w-full h-full object-cover"
                 />
               </div>
