@@ -16,7 +16,13 @@
       "Bash(cp \"Images/WhatsApp Image 2026-05-14 at 11.02.12 AM.jpeg\"            \"instrument-piano.jpeg\")",
       "Bash(cp \"Images/WhatsApp Image 2026-05-14 at 11.01.05 AM.jpeg\"            \"instrument-guitar.jpeg\")",
       "Bash(cp \"Images/WhatsApp Image 2026-05-14 at 11.01.05 AM \\(1\\).jpeg\"        \"instrument-bass.jpeg\")",
-      "Bash(cp \"Images/WhatsApp Image 2026-05-14 at 11.01.05 AM.jpeg\"            \"instrument-electric.jpeg\")"
+      "Bash(cp \"Images/WhatsApp Image 2026-05-14 at 11.01.05 AM.jpeg\"            \"instrument-electric.jpeg\")",
+      "PowerShell(npm run *)",
+      "PowerShell(Get-Process *)",
+      "mcp__claude_ai_Netlify__netlify-team-services-reader",
+      "mcp__claude_ai_Netlify__netlify-user-services-reader",
+      "mcp__claude_ai_Netlify__netlify-project-services-reader",
+      "mcp__claude_ai_Netlify__netlify-deploy-services-updater"
     ]
   }
 }

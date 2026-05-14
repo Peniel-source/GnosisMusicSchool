@@ -64,12 +64,12 @@ export default function TestimonialSlider() {
 
   const next = () => {
     setDirection(1);
-    setIndex((prev) => (prev + 1) % testimonials.length);
+    setIndex((prev: number) => (prev + 1) % testimonials.length);
   };
 
   const prev = () => {
     setDirection(-1);
-    setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setIndex((prev: number) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
   useEffect(() => {
