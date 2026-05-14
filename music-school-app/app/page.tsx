@@ -42,14 +42,14 @@ const TestimonialSlider= dynamic(() => import("@/components/TestimonialSlider"),
 /* ── data ─────────────────────────────────────────────── */
 
 const instruments = [
-  { icon: Mic2, name: "Vocals", description: "Build confidence, range, and stage presence with expert vocal coaching." },
-  { icon: Piano, name: "Piano", description: "From classical foundations to modern improvisation and songwriting." },
-  { icon: Guitar, name: "Guitar (Acoustic)", description: "Fingerpicking, chords, and music theory for beginners to advanced players." },
-  { icon: Guitar, name: "Bass Guitar", description: "Groove-focused instruction covering rhythm, timing, and band dynamics." },
-  { icon: Music2, name: "Electric Guitar", description: "Rock, blues, jazz, and everything in between with tone-shaping technique." },
-  { icon: Waves, name: "Trumpet / Brass", description: "Breath control, embouchure, and repertoire for orchestral and jazz settings." },
-  { icon: Drum, name: "Drums", description: "Coordination, independence, and pocket — from rudiments to full kit performance." },
-  { icon: GraduationCap, name: "After-School Programs", description: "Structured music enrichment designed for school-age learners in a fun group setting." },
+  { icon: Mic2,         name: "Vocals",               image: "/instrument-vocals.jpeg",       description: "Build confidence, range, and stage presence with expert vocal coaching." },
+  { icon: Piano,        name: "Piano",                 image: "/instrument-piano.jpeg",        description: "From classical foundations to modern improvisation and songwriting." },
+  { icon: Guitar,       name: "Guitar (Acoustic)",     image: "/instrument-guitar.jpeg",       description: "Fingerpicking, chords, and music theory for beginners to advanced players." },
+  { icon: Guitar,       name: "Bass Guitar",           image: "/instrument-bass.jpeg",         description: "Groove-focused instruction covering rhythm, timing, and band dynamics." },
+  { icon: Music2,       name: "Electric Guitar",       image: "/instrument-electric.jpeg",     description: "Rock, blues, jazz, and everything in between with tone-shaping technique." },
+  { icon: Waves,        name: "Trumpet / Brass",       image: "/instrument-brass.jpeg",        description: "Breath control, embouchure, and repertoire for orchestral and jazz settings." },
+  { icon: Drum,         name: "Drums",                 image: "/instrument-drums.jpeg",        description: "Coordination, independence, and pocket — from rudiments to full kit performance." },
+  { icon: GraduationCap, name: "After-School Programs", image: "/instrument-afterschool.jpeg", description: "Structured music enrichment designed for school-age learners in a fun group setting." },
 ];
 
 const events = [
@@ -370,7 +370,7 @@ export default function HomePage() {
         <ParallaxWrapper offset={30}>
           <AnimeReveal className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" staggerMs={70}>
             {instruments.map((inst, i) => (
-              <InstrumentCard key={inst.name + i} {...inst} index={i} />
+              <InstrumentCard key={inst.name + i} {...inst} image={inst.image} index={i} />
             ))}
           </AnimeReveal>
         </ParallaxWrapper>
