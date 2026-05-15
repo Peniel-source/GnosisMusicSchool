@@ -5,3 +5,4 @@ test-deploy/
 .next/
 public/Images_tmp/
 public/Images_tmp2/
+*.zip

@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
   // It corrupts paths by inserting null bytes at the '#' position.
   // Force webpack until upstream fixes this.
   bundlePagesRouterDependencies: false,
+  output: "standalone",
 };
 
 export default nextConfig;
