@@ -26,10 +26,6 @@ export const metadata: Metadata = {
   description:
     "World-class music education for kids, teens, and adults. Private lessons, group workshops, and live performances. Book your GH₵47 intro lesson today.",
   keywords: "music school, music lessons, piano, guitar, vocals, drums, music academy",
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({
@@ -40,6 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`dark ${playfair.variable} ${dmSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">

@@ -111,6 +111,7 @@ export default function AboutPage() {
               src="/studio-main.png"
               alt="Gnosis Music Academy Studio"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
             />
           </motion.div>
