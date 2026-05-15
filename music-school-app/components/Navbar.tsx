@@ -39,7 +39,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-2 shrink-0">
             <div className="w-10 h-10 rounded-full overflow-hidden shrink-0">
               <Image
-                src="/Images/logo.jpeg"
+                src="/favicon.ico"
                 alt="Gnosis Music School"
                 width={40}
                 height={40}
@@ -97,7 +97,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "tween", duration: 0.25 }}
-            className="lg:hidden fixed inset-0 top-16 bg-background/95 backdrop-blur-xl z-40"
+            className="lg:hidden fixed inset-0 top-16 bg-background z-40"
           >
             <nav className="flex flex-col p-6 gap-2">
               {navLinks.map((link, i) => (

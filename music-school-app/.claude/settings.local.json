@@ -25,7 +25,8 @@
       "mcp__claude_ai_Netlify__netlify-deploy-services-updater",
       "Bash(Get-ChildItem C:\\\\dev\\\\GnosisMusicSchool\\\\music-school-app\\\\public *)",
       "PowerShell(Get-ChildItem \"C:\\\\dev\\\\GnosisMusicSchool\\\\music-school-app\\\\public\\\\Images_tmp2\" | Select-Object Name, @{N='MB';E={[math]::Round\\($_.Length/1MB,2\\)}})",
-      "PowerShell(Get-ChildItem -Path \"C:\\\\dev\\\\GnosisMusicSchool\\\\music-school-app\\\\public\\\\Images_tmp2\" -File | ForEach-Object { \"$\\($_.Name\\) — $\\([math]::Round\\($_.Length/1MB,2\\)\\) MB\" })"
+      "PowerShell(Get-ChildItem -Path \"C:\\\\dev\\\\GnosisMusicSchool\\\\music-school-app\\\\public\\\\Images_tmp2\" -File | ForEach-Object { \"$\\($_.Name\\) — $\\([math]::Round\\($_.Length/1MB,2\\)\\) MB\" })",
+      "PowerShell(New-Item *)"
     ]
   }
 }

@@ -39,7 +39,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-full overflow-hidden shrink-0">
                 <Image
-                  src="/Images/logo.jpeg"
+                  src="/favicon.ico"
                   alt="Gnosis Music School"
                   width={40}
                   height={40}
