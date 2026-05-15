@@ -22,7 +22,8 @@
       "mcp__claude_ai_Netlify__netlify-team-services-reader",
       "mcp__claude_ai_Netlify__netlify-user-services-reader",
       "mcp__claude_ai_Netlify__netlify-project-services-reader",
-      "mcp__claude_ai_Netlify__netlify-deploy-services-updater"
+      "mcp__claude_ai_Netlify__netlify-deploy-services-updater",
+      "Bash(Get-ChildItem C:\\\\dev\\\\GnosisMusicSchool\\\\music-school-app\\\\public *)"
     ]
   }
 }
