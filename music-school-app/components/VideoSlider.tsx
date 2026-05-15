@@ -8,7 +8,6 @@ const videos = [
   { src: "/Images_tmp2/WhatsApp%20Video%202026-05-14%20at%2011.02.13%20AM.mp4", type: "video/mp4" },
   { src: "/Images_tmp2/WhatsApp%20Video%202026-05-14%20at%2011.02.13%20AM%20(1).mp4", type: "video/mp4" },
   { src: "/Images_tmp2/WhatsApp%20Video%202026-05-14%20at%2011.02.14%20AM.mp4", type: "video/mp4" },
-  { src: "/Images_tmp2/IMG_1029.MOV", type: "video/quicktime" },
 ];
 
 export default function VideoSlider() {
