@@ -558,9 +558,9 @@ export default function HomePage() {
                 >
                   Book Your Intro Lesson <ArrowRight className="w-5 h-5" />
                 </Link>
-                <a href="tel:+15551234567" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-medium">
+                <a href="tel:+233265410878" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-medium">
                   <CalendarDays className="w-5 h-5 text-primary" />
-                  Call Us: +1 (555) 123-4567
+                  Call Us: 026 541 0878
                 </a>
               </div>
             </motion.div>

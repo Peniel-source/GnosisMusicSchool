@@ -101,15 +101,18 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <Phone className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                <a href="tel:+15551234567" className="hover:text-primary transition-colors">+1 (555) 123-4567</a>
+                <span>
+                  <a href="tel:+233265410878" className="hover:text-primary transition-colors block">026 541 0878</a>
+                  <a href="tel:+233547603878" className="hover:text-primary transition-colors block">054 760 3878</a>
+                </span>
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <Mail className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                <a href="mailto:hello@gnosismusic.com" className="hover:text-primary transition-colors">hello@gnosismusic.com</a>
+                <a href="mailto:adamselisha2015@yahoo.com" className="hover:text-primary transition-colors">adamselisha2015@yahoo.com</a>
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                <span>123 Music Lane, Suite 200<br />Harmony City, CA 90210</span>
+                <span>Paris Villa, Teshie Tsuibleoo<br />Lekma Agblezaa Road</span>
               </li>
             </ul>
             <div className="mt-6">

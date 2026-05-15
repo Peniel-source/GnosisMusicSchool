@@ -135,7 +135,7 @@ export default function RegistrationPage() {
                     <Field label="Last Name *" name="lastName" value={form.lastName} onChange={(v) => update("lastName", v)} placeholder="Smith" required />
                   </div>
                   <Field label="Email Address *" name="email" type="email" value={form.email} onChange={(v) => update("email", v)} placeholder="jane@example.com" required />
-                  <Field label="Phone Number" name="phone" type="tel" value={form.phone} onChange={(v) => update("phone", v)} placeholder="+1 (555) 000-0000" />
+                  <Field label="Phone Number" name="phone" type="tel" value={form.phone} onChange={(v) => update("phone", v)} placeholder="026 000 0000" />
                   <div>
                     <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5">Age / Age Range</label>
                     <select

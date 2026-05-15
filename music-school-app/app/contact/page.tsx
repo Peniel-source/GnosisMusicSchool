@@ -154,9 +154,9 @@ export default function ContactPage() {
               <h2 className="font-heading font-bold text-2xl text-foreground mb-6">Contact Information</h2>
               <div className="space-y-5">
                 {[
-                  { icon: Phone, label: "Phone", value: "+1 (555) 123-4567", href: "tel:+15551234567" },
-                  { icon: Mail, label: "Email", value: "hello@gnosismusic.com", href: "mailto:hello@gnosismusic.com" },
-                  { icon: MapPin, label: "Address", value: "123 Music Lane, Suite 200\nHarmony City, CA 90210", href: null },
+                  { icon: Phone, label: "Phone", value: "026 541 0878\n054 760 3878", href: "tel:+233265410878" },
+                  { icon: Mail, label: "Email", value: "adamselisha2015@yahoo.com", href: "mailto:adamselisha2015@yahoo.com" },
+                  { icon: MapPin, label: "Address", value: "Paris Villa, Teshie Tsuibleoo\nLekma Agblezaa Road", href: null },
                 ].map(({ icon: Icon, label, value, href }) => (
                   <div key={label} className="flex items-start gap-4 p-4 bg-background border border-border rounded-xl">
                     <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
@@ -189,13 +189,18 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Map placeholder */}
-            <div className="rounded-2xl overflow-hidden border border-border h-56 bg-surface flex items-center justify-center">
-              <div className="text-center text-muted-foreground">
-                <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
-                <p className="text-sm font-medium">Google Maps Embed</p>
-                <p className="text-xs">123 Music Lane, Harmony City CA</p>
-              </div>
+            {/* Map */}
+            <div className="rounded-2xl overflow-hidden border border-border h-56">
+              <iframe
+                src="https://www.google.com/maps?q=Paris+Villa,+Teshie+Tsuibleoo,+Lekma+Agblezaa+Road,+Accra,+Ghana&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Gnosis Fundamental Music Academy location"
+              />
             </div>
           </motion.div>
         </div>
