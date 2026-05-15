@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -21,7 +22,6 @@ import {
   CalendarDays,
   Waves,
 } from "lucide-react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SectionWrapper from "@/components/SectionWrapper";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import InstrumentCard from "@/components/InstrumentCard";
@@ -150,6 +150,7 @@ const notePositions = [
 
 export default function HomePage() {
   const mousePosition = useMousePosition();
+  const [activeProgram, setActiveProgram] = useState<keyof typeof programs>("kids");
 
   return (
     <>
@@ -463,58 +464,69 @@ export default function HomePage() {
           <p className="text-muted-foreground max-w-xl mx-auto">Music education that grows with you — from your first notes to the concert stage.</p>
         </motion.div>
 
-        <Tabs defaultValue="kids" className="w-full">
-          <TabsList className="grid grid-cols-2 lg:grid-cols-4 w-full max-w-2xl mx-auto mb-10 bg-surface border border-border p-1 rounded-xl h-auto gap-1">
-            {[
-              { value: "kids", label: "Kids" },
-              { value: "teens", label: "Kids & Teens" },
-              { value: "adults", label: "Adults" },
-              { value: "private", label: "Private" },
-            ].map((tab) => (
-              <TabsTrigger
-                key={tab.value}
-                value={tab.value}
-                className="rounded-lg data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-2.5 text-sm font-medium"
-              >
-                {tab.label}
-              </TabsTrigger>
-            ))}
-          </TabsList>
-
-          {(Object.entries(programs) as [string, typeof programs.kids][]).map(([key, prog]) => (
-            <TabsContent key={key} value={key}>
-              <div className="grid md:grid-cols-2 gap-10 items-center">
-                <div className="relative rounded-2xl overflow-hidden h-56 sm:h-72 md:h-96 border border-border">
-                  <Image
-                    src={prog.image}
-                    alt={prog.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-heading font-bold text-3xl text-foreground mb-4">{prog.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed mb-6">{prog.description}</p>
-                  <ul className="space-y-2 mb-8">
-                    {prog.features.map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-sm text-foreground/80">
-                        <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    href="/registration"
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-full teal-glow hover:opacity-90 transition-all"
-                  >
-                    Enroll Now <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            </TabsContent>
+        {/* Category pills */}
+        <div className="flex flex-wrap justify-center gap-3 mb-10">
+          {[
+            { value: "kids" as const, label: "Kids (4–9)" },
+            { value: "teens" as const, label: "Kids & Teens (10–17)" },
+            { value: "adults" as const, label: "Adults (18+)" },
+            { value: "private" as const, label: "Private Lessons" },
+          ].map((tab) => (
+            <button
+              key={tab.value}
+              onClick={() => setActiveProgram(tab.value)}
+              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 ${
+                activeProgram === tab.value
+                  ? "bg-primary text-primary-foreground teal-glow"
+                  : "bg-surface border border-border text-muted-foreground hover:border-primary/40 hover:text-foreground"
+              }`}
+            >
+              {tab.label}
+            </button>
           ))}
-        </Tabs>
+        </div>
+
+        {/* Program content */}
+        {(() => {
+          const prog = programs[activeProgram];
+          return (
+            <motion.div
+              key={activeProgram}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+              className="grid md:grid-cols-2 gap-10 items-center"
+            >
+              <div className="relative rounded-2xl overflow-hidden h-56 sm:h-72 md:h-96 border border-border">
+                <Image
+                  src={prog.image}
+                  alt={prog.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <h3 className="font-heading font-bold text-3xl text-foreground mb-4">{prog.title}</h3>
+                <p className="text-muted-foreground leading-relaxed mb-6">{prog.description}</p>
+                <ul className="space-y-2 mb-8">
+                  {prog.features.map((f) => (
+                    <li key={f} className="flex items-center gap-2 text-sm text-foreground/80">
+                      <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="/registration"
+                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-full teal-glow hover:opacity-90 transition-all"
+                >
+                  Enroll Now <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </motion.div>
+          );
+        })()}
       </SectionWrapper>
 
       {/* ── Animated Stats ── */}
