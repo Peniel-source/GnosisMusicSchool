@@ -297,7 +297,7 @@ export default function HomePage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-14"
           >
-            <h2 className="font-heading font-bold text-4xl lg:text-5xl text-foreground mb-4">
+            <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4 text-balance">
               <AntigravityTextReveal text="How It Works" />
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto">Three simple steps stand between you and a lifetime of musical growth.</p>
@@ -344,7 +344,7 @@ export default function HomePage() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <h2 className="font-heading font-bold text-4xl lg:text-5xl text-foreground mb-4">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4 text-balance">
             <AntigravityTextReveal text="Instruments We Teach" />
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">From classical piano to electric guitar — find your voice in the instrument that moves you.</p>
@@ -373,7 +373,7 @@ export default function HomePage() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <h2 className="font-heading font-bold text-4xl lg:text-5xl text-foreground mb-4">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4 text-balance">
             <AntigravityTextReveal text="Upcoming Events" />
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">Recitals, workshops, open mics — life at Gnosis is always in rhythm.</p>
@@ -388,7 +388,7 @@ export default function HomePage() {
       {/* ── Instructors Slider ── */}
       <section className="bg-surface py-20 border-y border-border">
         <div className="max-w-7xl mx-auto px-4 text-center mb-10">
-          <h2 className="font-heading font-bold text-4xl lg:text-6xl text-foreground mb-4">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-6xl text-foreground mb-4 text-balance">
             <AntigravityTextReveal text="Learn From the Best" />
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -407,7 +407,7 @@ export default function HomePage() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <h2 className="font-heading font-bold text-4xl lg:text-5xl text-foreground mb-4">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4 text-balance">
             <AntigravityTextReveal text="Why Gnosis?" />
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
@@ -445,7 +445,7 @@ export default function HomePage() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <h2 className="font-heading font-bold text-4xl lg:text-5xl text-foreground mb-4">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4 text-balance">
             <AntigravityTextReveal text="Programs For Every Stage" />
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">Music education that grows with you — from your first notes to the concert stage.</p>
@@ -541,7 +541,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="font-heading font-black text-4xl lg:text-6xl text-foreground mb-6">
+              <h2 className="font-heading font-black text-3xl sm:text-4xl lg:text-6xl text-foreground mb-6 text-balance">
                 <AntigravityTextReveal text="Your Musical Journey " />
                 <span className="gradient-text">
                   <AntigravityTextReveal text="Starts Today" delay={0.4} />
@@ -586,7 +586,7 @@ export default function HomePage() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <h2 className="font-heading font-bold text-4xl lg:text-5xl text-foreground mb-4">From Our Blog</h2>
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4 text-balance">From Our Blog</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">Practical tips, research, and stories from inside the Gnosis community.</p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

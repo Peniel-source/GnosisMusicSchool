@@ -48,7 +48,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="font-heading font-black text-5xl lg:text-6xl text-foreground mb-6 leading-tight"
+            className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-foreground mb-6 leading-tight text-balance"
           >
             Music Is Not a Hobby.{" "}
             <span className="gradient-text">It&apos;s a Calling.</span>
@@ -73,7 +73,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-heading font-bold text-4xl text-foreground mb-6">From a Basement Studio to a Community Institution</h2>
+            <h2 className="font-heading font-bold text-3xl sm:text-4xl text-foreground mb-6 text-balance">From a Basement Studio to a Community Institution</h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 Gnosis Fundamental Music Academy was founded over a decade ago by a small group of professional musicians who shared a frustration: most music schools taught students to pass tests, not to truly play. They set out to build something different.
@@ -138,7 +138,7 @@ export default function AboutPage() {
             <span className="inline-block bg-primary/10 border border-primary/30 text-primary text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">
               Leadership
             </span>
-            <h2 className="font-heading font-bold text-4xl lg:text-5xl text-foreground">
+            <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground text-balance">
               Meet Our Founder
             </h2>
           </motion.div>
@@ -314,7 +314,7 @@ export default function AboutPage() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <h2 className="font-heading font-bold text-4xl lg:text-5xl text-foreground mb-4">Meet Your Instructors</h2>
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4 text-balance">Meet Your Instructors</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
             Nine dedicated musicians with deep expertise, genuine passion, and a gift for bringing out the best in every student.
           </p>
@@ -335,7 +335,7 @@ export default function AboutPage() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <h2 className="font-heading font-bold text-4xl lg:text-5xl text-foreground mb-4">Why Gnosis?</h2>
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4 text-balance">Why Gnosis?</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
             Six reasons thousands of families choose us — and keep coming back.
           </p>
@@ -367,7 +367,7 @@ export default function AboutPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="font-heading font-bold text-4xl text-foreground mb-4">Ready to Begin?</h2>
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl text-foreground mb-4 text-balance">Ready to Begin?</h2>
           <p className="text-muted-foreground mb-8 max-w-md mx-auto">Book your GH₵47 intro lesson and experience the Gnosis difference firsthand.</p>
           <Link
             href="/registration"
