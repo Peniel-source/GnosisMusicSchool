@@ -39,7 +39,7 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`dark ${playfair.variable} ${dmSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+      <body className="min-h-full flex flex-col bg-background text-foreground" suppressHydrationWarning>
         <NavbarWrapper />
         <main className="flex-1">{children}</main>
         <Footer />
