@@ -48,7 +48,7 @@ const instruments = [
   { icon: Guitar,       name: "Bass Guitar",           image: "/instrument-bass.jpeg",         description: "Groove-focused instruction covering rhythm, timing, and band dynamics." },
   { icon: Music2,       name: "Electric Guitar",       image: "/instrument-electric.jpeg",     description: "Rock, blues, jazz, and everything in between with tone-shaping technique." },
   { icon: Waves,        name: "Trumpet / Brass",       image: "/instrument-brass.jpeg",        description: "Breath control, embouchure, and repertoire for orchestral and jazz settings." },
-  { icon: Drum,         name: "Drums",                 image: "/instrument-drums.jpeg",        description: "Coordination, independence, and pocket — from rudiments to full kit performance." },
+  { icon: Drum,         name: "Drums",                 image: "/instrument-drum.jpeg",        description: "Coordination, independence, and pocket — from rudiments to full kit performance." },
   { icon: GraduationCap, name: "After-School Programs", image: "/instrument-afterschool.jpeg", description: "Structured music enrichment designed for school-age learners in a fun group setting." },
 ];
 
