@@ -1,3 +1,9 @@
 [build]
-  command = "node -e \"const fs=require('fs');['dev','cache'].forEach(d=>{try{fs.rmSync('.next/'+d,{recursive:true,force:true})}catch(e){}})\" && npm run build"
+  command = "npm run build"
   publish = ".next"
+
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP_SET_PUBLISH_DIR = "true"
+  TMP = "C:\\dev\\GnosisMusicSchool\\music-school-app\\tmp"
+  TEMP = "C:\\dev\\GnosisMusicSchool\\music-school-app\\tmp"
+  NEXT_OTEL_FETCH_DISABLED = "1"
