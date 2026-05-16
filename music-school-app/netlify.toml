@@ -1,3 +1,3 @@
 [build]
-  command = "npm run build"
+  command = "node -e \"const fs=require('fs');['dev','cache'].forEach(d=>{try{fs.rmSync('.next/'+d,{recursive:true,force:true})}catch(e){}})\" && npm run build"
   publish = ".next"

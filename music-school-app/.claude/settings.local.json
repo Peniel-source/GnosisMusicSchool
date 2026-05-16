@@ -26,7 +26,13 @@
       "Bash(Get-ChildItem C:\\\\dev\\\\GnosisMusicSchool\\\\music-school-app\\\\public *)",
       "PowerShell(Get-ChildItem \"C:\\\\dev\\\\GnosisMusicSchool\\\\music-school-app\\\\public\\\\Images_tmp2\" | Select-Object Name, @{N='MB';E={[math]::Round\\($_.Length/1MB,2\\)}})",
       "PowerShell(Get-ChildItem -Path \"C:\\\\dev\\\\GnosisMusicSchool\\\\music-school-app\\\\public\\\\Images_tmp2\" -File | ForEach-Object { \"$\\($_.Name\\) — $\\([math]::Round\\($_.Length/1MB,2\\)\\) MB\" })",
-      "PowerShell(New-Item *)"
+      "PowerShell(New-Item *)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\dev\\\\GnosisMusicSchool\\\\music-school-app\\\\public\" -Recurse -File | Sort-Object Length -Descending | Select-Object -First 40 | ForEach-Object { \"$\\($_.Length\\) $\\($_.FullName\\)\" })",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\dev\\\\GnosisMusicSchool\\\\music-school-app\\\\public\" -Recurse -File | Select-Object -Skip 40 | ForEach-Object { \"$\\($_.Length\\) $\\($_.FullName\\)\" })",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\dev\\\\GnosisMusicSchool\\\\music-school-app\\\\public\" -Recurse -File | Where-Object { $_.Name -match \"[^a-zA-Z0-9\\\\.\\\\-\\\\_]\" } | ForEach-Object { $_.FullName })",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\dev\\\\GnosisMusicSchool\\\\music-school-app\\\\.next\" -Recurse -File | Where-Object { $_.Name -match \"[^a-zA-Z0-9.\\\\-]\" } | Select-Object FullName, Length | Format-Table -AutoSize)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\dev\\\\GnosisMusicSchool\\\\music-school-app\\\\.next\" -Recurse -File | Sort-Object Length -Descending | Select-Object -First 20 | ForEach-Object { \"$\\([math]::Round\\($_.Length/1MB, 2\\)\\) MB  $\\($_.Name\\)\" })",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\dev\\\\GnosisMusicSchool\\\\music-school-app\\\\.next\" -Recurse -File | Where-Object { $_.Length -gt 5MB } | Select-Object @{N='MB';E={[math]::Round\\($_.Length/1MB,1\\)}}, @{N='RelPath';E={$_.FullName.Replace\\('C:\\\\dev\\\\GnosisMusicSchool\\\\music-school-app\\\\.next\\\\',''\\)}} | Sort-Object MB -Descending)"
     ]
   }
 }
