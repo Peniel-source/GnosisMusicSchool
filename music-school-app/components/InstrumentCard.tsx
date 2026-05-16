@@ -11,6 +11,7 @@ interface InstrumentCardProps {
   description: string;
   image?: string;
   index?: number;
+  onClick?: () => void;
 }
 
 export default function InstrumentCard({
@@ -19,6 +20,7 @@ export default function InstrumentCard({
   description,
   image,
   index = 0,
+  onClick,
 }: InstrumentCardProps) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -41,6 +43,7 @@ export default function InstrumentCard({
         rotateX: 2,
         rotateY: -2,
       }}
+      onClick={onClick}
       className="group relative bg-surface border border-border rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:shadow-[0_20px_50px_oklch(0.72_0.155_182/15%)] hover:border-primary/60 perspective-1000 overflow-hidden"
     >
       {/* Background image */}
@@ -66,7 +69,10 @@ export default function InstrumentCard({
           <Icon className="w-6 h-6 text-primary" />
         </motion.div>
         <h3 className="font-heading font-semibold text-lg text-foreground mb-1">{name}</h3>
-        <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+        <p className="text-sm text-muted-foreground leading-relaxed mb-4">{description}</p>
+        <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          View Roadmap <span className="text-base leading-none">→</span>
+        </span>
       </div>
     </motion.div>
   );

@@ -33,6 +33,9 @@ import AntigravityTextReveal from "@/components/AntigravityTextReveal";
 import { useMousePosition } from "@/lib/hooks/use-mouse-position";
 import ParallaxWrapper from "@/components/ParallaxWrapper";
 import ScrollScaleWrapper from "@/components/ScrollScaleWrapper";
+import { blogPosts } from "@/lib/blog";
+import { instrumentToSlug } from "@/lib/roadmap";
+import { useRouter } from "next/navigation";
 
 const AnimeWaveform    = dynamic(() => import("@/components/AnimeWaveform"),    { ssr: false });
 const InstructorSlider = dynamic(() => import("@/components/InstructorSlider"), { ssr: false });
@@ -112,29 +115,6 @@ const programs = {
   },
 };
 
-const blogPosts = [
-  {
-    title: "5 Signs Your Child Is Ready for Music Lessons",
-    date: "April 28, 2025",
-    excerpt: "Not sure if your 4-year-old is ready for piano? Here's what developmental experts and our instructors say about the right age to start.",
-    tag: "Parenting & Music",
-    image: "/blog-parenting.jpeg",
-  },
-  {
-    title: "How to Practice Effectively in Just 20 Minutes a Day",
-    date: "April 14, 2025",
-    excerpt: "Quantity isn't the secret to rapid musical progress — focused, intentional practice is. We break down the method that works for all skill levels.",
-    tag: "Practice Tips",
-    image: "/blog-practice.jpeg",
-  },
-  {
-    title: "The Science Behind Why Music Makes Kids Smarter",
-    date: "March 31, 2025",
-    excerpt: "A growing body of research links early music education to improved math skills, reading comprehension, and emotional intelligence. Here's the data.",
-    tag: "Research",
-    image: "/blog-research.jpeg",
-  },
-];
 
 const noteSymbols = ["♩", "♪", "♫", "♬", "𝄞", "♭"];
 const notePositions = [
@@ -151,6 +131,7 @@ const notePositions = [
 export default function HomePage() {
   const mousePosition = useMousePosition();
   const [activeProgram, setActiveProgram] = useState<keyof typeof programs>("kids");
+  const router = useRouter();
 
   return (
     <>
@@ -371,7 +352,13 @@ export default function HomePage() {
         <ParallaxWrapper offset={30}>
           <AnimeReveal className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" staggerMs={70}>
             {instruments.map((inst, i) => (
-              <InstrumentCard key={inst.name + i} {...inst} image={inst.image} index={i} />
+              <InstrumentCard
+                key={inst.name + i}
+                {...inst}
+                image={inst.image}
+                index={i}
+                onClick={() => router.push(`/roadmap/${instrumentToSlug(inst.name)}`)}
+              />
             ))}
           </AnimeReveal>
         </ParallaxWrapper>
@@ -612,7 +599,7 @@ export default function HomePage() {
               transition={{ delay: i * 0.1, duration: 0.5 }}
               className="group bg-background border border-border rounded-2xl overflow-hidden hover:border-primary/40 transition-all duration-300"
             >
-              <div className="relative h-44 overflow-hidden">
+              <Link href={`/blog/${post.slug}`} className="relative h-44 overflow-hidden block">
                 <Image
                   src={post.image}
                   alt={post.title}
@@ -620,15 +607,17 @@ export default function HomePage() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-              </div>
+              </Link>
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-xs font-semibold text-primary bg-primary/10 border border-primary/20 px-2.5 py-1 rounded-full">{post.tag}</span>
                   <span className="text-xs text-muted-foreground">{post.date}</span>
                 </div>
-                <h3 className="font-heading font-bold text-lg text-foreground mb-2 group-hover:text-primary transition-colors leading-snug">{post.title}</h3>
+                <Link href={`/blog/${post.slug}`}>
+                  <h3 className="font-heading font-bold text-lg text-foreground mb-2 group-hover:text-primary transition-colors leading-snug">{post.title}</h3>
+                </Link>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4">{post.excerpt}</p>
-                <Link href="#" className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:gap-2 transition-all">
+                <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:gap-2 transition-all">
                   Read More <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -636,6 +625,7 @@ export default function HomePage() {
           ))}
         </div>
       </SectionWrapper>
+
     </>
   );
 }
